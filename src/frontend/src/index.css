@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1.25rem;
+    --background: 0.98 0.01 40;
+    --foreground: 0.22 0.025 30;
+    --card: 1 0 0;
+    --card-foreground: 0.22 0.025 30;
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0.025 30;
+    --primary: 0.62 0.14 28;
+    --primary-foreground: 0.98 0.01 40;
+    --secondary: 0.95 0.02 40;
+    --secondary-foreground: 0.25 0.02 30;
+    --muted: 0.95 0.02 40;
+    --muted-foreground: 0.52 0.03 35;
+    --accent: 0.88 0.08 15;
+    --accent-foreground: 0.25 0.02 30;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.91 0.018 35;
+    --input: 0.91 0.018 35;
+    --ring: 0.62 0.14 28;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.98 0.01 40;
+    --sidebar-foreground: 0.22 0.025 30;
+    --sidebar-primary: 0.62 0.14 28;
+    --sidebar-primary-foreground: 0.98 0.01 40;
+    --sidebar-accent: 0.95 0.02 40;
+    --sidebar-accent-foreground: 0.25 0.02 30;
+    --sidebar-border: 0.91 0.018 35;
+    --sidebar-ring: 0.62 0.14 28;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .story-ring {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3px;
+    border-radius: 9999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .story-ring:hover {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35), 0 8px 24px
+      rgba(255, 255, 255, 0.15);
+  }
+
+  .story-ring-inner {
+    background: oklch(0.98 0.01 40);
+    border-radius: 9999px;
+    padding: 2px;
+  }
+
+  .section-card {
+    background: white;
+    border-radius: 1.75rem;
+    box-shadow: 0 4px 32px -4px rgba(0, 0, 0, 0.09), 0 1px 4px
+      rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .section-card:hover {
+    box-shadow: 0 12px 48px -8px rgba(0, 0, 0, 0.15), 0 2px 8px
+      rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg) scale(1.12);
+  }
+}

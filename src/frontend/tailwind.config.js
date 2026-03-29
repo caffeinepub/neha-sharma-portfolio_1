@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
+        playfair: ["Playfair Display", "Georgia", "serif"],
       },
       colors: {
         border: "oklch(var(--border))",
@@ -77,8 +78,8 @@ export default {
         "4xl": "2rem",
       },
       boxShadow: {
-        soft: "0 2px 12px -2px rgba(0,0,0,0.08)",
-        card: "0 4px 24px -4px rgba(0,0,0,0.10)",
+        soft: "0 2px 12px -2px rgba(0,0,0,0.06)",
+        card: "0 4px 24px -4px rgba(0,0,0,0.08)",
       },
       keyframes: {
         "accordion-down": {

@@ -5,6 +5,7 @@ import { AudienceActivity } from "./components/AudienceActivity";
 import { CollabOptions } from "./components/CollabOptions";
 import { Collaborations } from "./components/Collaborations";
 import { Contact } from "./components/Contact";
+import { FanEdits } from "./components/FanEdits";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -34,6 +35,7 @@ export default function App() {
         <Testimonials />
         <Services />
         <Contact />
+        <FanEdits />
       </main>
       <Footer />
 
@@ -45,11 +47,12 @@ export default function App() {
         transition={{ delay: 1.2, duration: 0.5 }}
         whileHover={{ scale: 1.06, y: -2 }}
         whileTap={{ scale: 0.96 }}
-        className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-white font-bold text-sm shadow-2xl transition-shadow duration-200"
+        className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl font-bold text-sm shadow-2xl transition-shadow duration-200"
         style={{
-          background: "linear-gradient(135deg, #f97316, #ec4899)",
+          background: "linear-gradient(135deg, #F4BFC9, #D8BFA3)",
+          color: "#2B2B2B",
           boxShadow:
-            "0 8px 32px rgba(236,72,153,0.45), 0 2px 8px rgba(0,0,0,0.2)",
+            "0 8px 32px rgba(244,191,201,0.45), 0 2px 8px rgba(0,0,0,0.1)",
         }}
         data-ocid="floating.contact.button"
       >

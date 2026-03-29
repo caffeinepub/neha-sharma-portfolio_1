@@ -5,11 +5,14 @@ export function About() {
     <section
       id="about"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.96 0.015 40)" }}
+      style={{ backgroundColor: "oklch(0.975 0.012 10)" }}
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <SectionHeader heading="About Neha" />
-        <p className="text-primary font-semibold mb-6">
+        <p
+          className="font-semibold mb-6 tracking-wide"
+          style={{ color: "oklch(0.55 0.055 65)" }}
+        >
           Beauty • Fashion • Lifestyle Creator
         </p>
         <p className="text-foreground/80 text-lg leading-relaxed">

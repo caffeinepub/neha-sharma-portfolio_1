@@ -61,8 +61,11 @@ function VideoCard({
         </span>
       )}
 
-      {/* Video */}
-      <div className="relative aspect-video bg-muted/30 rounded-xl overflow-hidden">
+      {/* Video — 9:16 aspect ratio (Instagram Reel style) */}
+      <div
+        className="relative bg-muted/30 rounded-xl overflow-hidden w-full"
+        style={{ aspectRatio: "9 / 16" }}
+      >
         {/* biome-ignore lint/a11y/useMediaCaption: fan video section, captions added via track when src is provided */}
         <video
           ref={videoRef}

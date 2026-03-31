@@ -29,7 +29,6 @@ export default function App() {
         <ViralHighlight />
         <Performance />
         <MediaKit />
-        <LoveSupport />
         <Collaborations />
         <Stories />
         <WhyBrands />
@@ -37,6 +36,7 @@ export default function App() {
         <AudienceActivity />
         <Testimonials />
         <Services />
+        <LoveSupport />
         <Contact />
       </main>
       <Footer />

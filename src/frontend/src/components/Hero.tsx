@@ -5,6 +5,9 @@ import { SiInstagram } from "react-icons/si";
 const INSTAGRAM_URL =
   "https://www.instagram.com/nehasharma.3_?igsh=OHByMmt2a24yM2k4";
 
+const PROFILE_IMG =
+  "/assets/uploads/image-019d38c1-0301-76de-886d-f6d9f3f9a5a2-4.png";
+
 function ShiningStarBadge() {
   return (
     <motion.div
@@ -161,13 +164,11 @@ export function Hero() {
               style={{ zIndex: 4 }}
             >
               <img
-                src="/assets/neha-profile.jpg"
+                src={PROFILE_IMG}
                 alt="Neha Sharma"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  // Fallback to original upload path if copy fails
-                  (e.currentTarget as HTMLImageElement).src =
-                    "/assets/uploads/photo_2026-02-16_11-22-13-2-1.jpg";
+                  (e.currentTarget as HTMLImageElement).src = PROFILE_IMG;
                 }}
               />
             </div>

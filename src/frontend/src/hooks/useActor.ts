@@ -26,8 +26,12 @@ export function useActor() {
       };
 
       const actor = await createActorWithConfig(actorOptions);
-      const adminToken = getSecretParameter("caffeineAdminToken") || "";
-      await actor._initializeAccessControlWithSecret(adminToken);
+      // Only call _initializeAccessControlWithSecret when admin token is present.
+      // Calling it with an empty string corrupts the backend admin state.
+      const adminToken = getSecretParameter("caffeineAdminToken");
+      if (adminToken) {
+        await actor._initializeAccessControlWithSecret(adminToken);
+      }
       return actor;
     },
     // Only refetch when identity changes

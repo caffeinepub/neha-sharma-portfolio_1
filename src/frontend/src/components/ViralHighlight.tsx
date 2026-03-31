@@ -32,7 +32,7 @@ export function ViralHighlight() {
               style={{ aspectRatio: "4/3" }}
             >
               <img
-                src="/assets/generated/mcaffeine-reel-cropped.dim_900x700.jpg"
+                src="/assets/uploads/photo_2026-02-17_08-44-30-019d38c0-ebff-719a-ac08-ac7685373305-2.jpg"
                 alt="mCaffeine viral reel"
                 className="w-full h-full object-cover rounded-3xl"
               />

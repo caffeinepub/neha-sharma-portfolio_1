@@ -16,7 +16,8 @@ const INSTAGRAM_URL =
 const collabs = [
   {
     brand: "mCaffeine",
-    thumbnail: "/assets/mcaffeine-collab.png",
+    thumbnail:
+      "/assets/uploads/photo_2026-02-17_08-44-30-019d38c0-ebff-719a-ac08-ac7685373305-2.jpg",
     metrics: [
       {
         icon: Eye,
@@ -52,7 +53,8 @@ const collabs = [
   },
   {
     brand: "Bodywise",
-    thumbnail: "/assets/bodywise-collab.jpg",
+    thumbnail:
+      "/assets/uploads/photo_2026-02-17_08-44-30_2-019d38c0-ebd3-70ff-bdbc-b7ce22346164-1.jpg",
     metrics: [
       {
         icon: Eye,
@@ -88,7 +90,8 @@ const collabs = [
   },
   {
     brand: "Clay Co",
-    thumbnail: "/assets/clayco-collab.jpg",
+    thumbnail:
+      "/assets/uploads/photo_2026-02-17_08-44-30_3-019d38c0-ec19-743d-9543-f7e7bba1476e-3.jpg",
     metrics: [
       {
         icon: Eye,

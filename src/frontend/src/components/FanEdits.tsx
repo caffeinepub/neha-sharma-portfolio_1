@@ -200,7 +200,7 @@ function SubmitForm({ onSuccess }: { onSuccess: () => void }) {
   const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState(0);
   const [status, setStatus] = useState<
-    "idle" | "uploading" | "submitting" | "success" | "error"
+    "idle" | "uploading" | "success" | "error"
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
@@ -220,7 +220,6 @@ function SubmitForm({ onSuccess }: { onSuccess: () => void }) {
         setProgress(pct);
       });
 
-      setStatus("submitting");
       await actor.submitFanEdit(title.trim(), name.trim(), blob);
 
       setStatus("success");
@@ -236,7 +235,7 @@ function SubmitForm({ onSuccess }: { onSuccess: () => void }) {
     }
   };
 
-  const isLoading = status === "uploading" || status === "submitting";
+  const isLoading = status === "uploading";
 
   return (
     <div
@@ -385,19 +384,10 @@ function SubmitForm({ onSuccess }: { onSuccess: () => void }) {
             {isLoading && (
               <div className="space-y-1.5" data-ocid="fan-edits.loading_state">
                 <div className="flex justify-between text-xs text-muted-foreground">
-                  <span>
-                    {status === "uploading"
-                      ? "Uploading video..."
-                      : "Submitting..."}
-                  </span>
-                  <span>
-                    {status === "uploading" ? `${Math.round(progress)}%` : ""}
-                  </span>
+                  <span>Uploading video...</span>
+                  <span>{`${Math.round(progress)}%`}</span>
                 </div>
-                <Progress
-                  value={status === "uploading" ? progress : 95}
-                  className="h-1.5"
-                />
+                <Progress value={progress} className="h-1.5" />
               </div>
             )}
 
@@ -428,7 +418,7 @@ function SubmitForm({ onSuccess }: { onSuccess: () => void }) {
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {status === "uploading" ? "Uploading..." : "Submitting..."}
+                  Uploading...
                 </>
               ) : !actor || isFetching ? (
                 <>

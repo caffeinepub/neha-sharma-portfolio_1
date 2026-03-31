@@ -16,8 +16,7 @@ const INSTAGRAM_URL =
 const collabs = [
   {
     brand: "mCaffeine",
-    thumbnail:
-      "/assets/uploads/photo_2026-02-17_08-44-30-019d38c0-ebff-719a-ac08-ac7685373305-2.jpg",
+    thumbnail: "/assets/generated/mcaffeine-collab-clean.dim_800x900.png",
     metrics: [
       {
         icon: Eye,
@@ -53,8 +52,7 @@ const collabs = [
   },
   {
     brand: "Bodywise",
-    thumbnail:
-      "/assets/uploads/photo_2026-02-17_08-44-30_2-019d38c0-ebd3-70ff-bdbc-b7ce22346164-1.jpg",
+    thumbnail: "/assets/photo_2026-02-17_08-44-30 (2).jpg",
     metrics: [
       {
         icon: Eye,
@@ -90,8 +88,7 @@ const collabs = [
   },
   {
     brand: "Clay Co",
-    thumbnail:
-      "/assets/uploads/photo_2026-02-17_08-44-30_3-019d38c0-ec19-743d-9543-f7e7bba1476e-3.jpg",
+    thumbnail: "/assets/photo_2026-02-17_08-44-30 (3).jpg",
     metrics: [
       {
         icon: Eye,
@@ -132,40 +129,20 @@ function CollabCard({
   index,
 }: { collab: (typeof collabs)[0]; index: number }) {
   const [expanded, setExpanded] = useState(false);
+
   return (
     <div
-      className="rounded-3xl bg-card overflow-hidden transition-all duration-300"
-      style={{
-        border: "1px solid oklch(0.93 0.015 35)",
-        boxShadow:
-          "0 2px 16px -2px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03)",
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 12px 40px -4px rgba(244,191,201,0.25), 0 4px 12px rgba(0,0,0,0.06)";
-        (e.currentTarget as HTMLDivElement).style.transform =
-          "translateY(-4px)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 2px 16px -2px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03)";
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-      }}
+      className="rounded-3xl bg-card border border-border overflow-hidden"
+      style={{ boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)" }}
     >
-      <div className="relative overflow-hidden aspect-[4/5]">
+      <div className={"relative overflow-hidden aspect-[4/5]"}>
         <img
           src={collab.thumbnail}
           alt={collab.brand}
-          className="w-full h-full object-cover object-top"
+          className={"w-full h-full object-cover object-top"}
         />
         <div className="absolute top-3 left-3">
-          <span
-            className="px-3 py-1 rounded-full text-xs font-semibold"
-            style={{
-              background: "linear-gradient(135deg, #F4BFC9, #D8BFA3)",
-              color: "#2B2B2B",
-            }}
-          >
+          <span className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
             Paid Partnership
           </span>
         </div>
@@ -175,7 +152,7 @@ function CollabCard({
             background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent)",
           }}
         >
-          <p className="font-bold text-xl text-white">{collab.brand}</p>
+          <p className="text-white font-bold text-xl">{collab.brand}</p>
         </div>
       </div>
       <div className="p-5">
@@ -185,11 +162,7 @@ function CollabCard({
             return (
               <div
                 key={m.l}
-                className="flex items-center gap-3 p-3 rounded-2xl"
-                style={{
-                  background: "oklch(0.975 0.012 10)",
-                  border: "1px solid oklch(0.93 0.015 35)",
-                }}
+                className="flex items-center gap-3 p-3 rounded-2xl bg-muted/30 border border-border/40"
               >
                 <div
                   className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${m.bg}`}
@@ -207,8 +180,7 @@ function CollabCard({
         <button
           type="button"
           onClick={() => setExpanded(!expanded)}
-          className="flex items-center gap-1 text-sm font-medium hover:underline"
-          style={{ color: "oklch(0.55 0.055 65)" }}
+          className="flex items-center gap-1 text-sm text-primary font-medium hover:underline"
           data-ocid={`collaborations.item.${index + 1}`}
         >
           {expanded ? (
@@ -231,21 +203,13 @@ function CollabCard({
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl text-sm font-medium"
-                style={{
-                  border: "1px solid oklch(0.93 0.015 35)",
-                  color: "oklch(0.52 0.005 30)",
-                }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl border border-border text-sm font-medium hover:bg-muted/50 transition-colors"
               >
                 <ExternalLink className="w-3.5 h-3.5" /> Open on Instagram
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center px-4 py-2 rounded-2xl text-sm font-semibold hover:opacity-90"
-                style={{
-                  background: "linear-gradient(135deg, #F4BFC9, #D8BFA3)",
-                  color: "#2B2B2B",
-                }}
+                className="inline-flex items-center px-4 py-2 rounded-2xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all"
                 data-ocid={`collaborations.contact.button.${index + 1}`}
               >
                 Work With Me
@@ -263,7 +227,7 @@ export function Collaborations() {
     <section
       id="collaborations"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.975 0.012 10)" }}
+      style={{ backgroundColor: "oklch(0.97 0.012 40)" }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeader

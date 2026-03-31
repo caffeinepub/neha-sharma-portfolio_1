@@ -17,7 +17,10 @@ const BRAND_GRADIENTS = [
   "linear-gradient(135deg, #006064, #00838f)",
 ];
 
-const brands: { name: string; gradientIndex: number }[] = [
+const brands: {
+  name: string;
+  gradientIndex: number;
+}[] = [
   { name: "Minimalist", gradientIndex: 0 },
   { name: "Plum", gradientIndex: 1 },
   { name: "Dot & Key", gradientIndex: 2 },
@@ -50,7 +53,7 @@ function BrandCircle({ size = 80 }: { size?: number }) {
         alignItems: "center",
         justifyContent: "center",
         flexShrink: 0,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
       }}
     >
       <span style={{ fontSize: "22px", lineHeight: 1 }}>🤍</span>
@@ -68,11 +71,7 @@ export function Stories() {
   return (
     <section
       id="stories"
-      className="py-20 md:py-28"
-      style={{
-        background:
-          "linear-gradient(to bottom, oklch(0.99 0.007 60), oklch(0.975 0.012 10))",
-      }}
+      className="py-20 md:py-28 bg-gradient-to-b from-background to-secondary/30"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeader
@@ -105,16 +104,10 @@ export function Stories() {
                       <BrandCircle size={80} />
                     </div>
                   </motion.div>
-                  <span
-                    className="text-sm font-semibold max-w-[80px] text-center leading-tight transition-colors duration-200 group-hover:text-primary"
-                    style={{ color: "oklch(0.22 0.005 30)" }}
-                  >
+                  <span className="text-sm font-semibold text-foreground max-w-[80px] text-center leading-tight group-hover:text-primary transition-colors duration-200">
                     {brand.name}
                   </span>
-                  <span
-                    className="text-xs font-medium tracking-wide"
-                    style={{ color: "oklch(0.55 0.055 65)" }}
-                  >
+                  <span className="text-xs text-primary/80 font-medium tracking-wide">
                     View Story
                   </span>
                 </button>
@@ -134,7 +127,7 @@ export function Stories() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
             style={{
-              background: "rgba(43, 29, 36, 0.65)",
+              background: "rgba(10, 5, 20, 0.7)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }}
@@ -165,7 +158,7 @@ export function Stories() {
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center"
+                  className="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
                   style={{
                     background: "rgba(255,255,255,0.15)",
                     color: "rgba(255,255,255,0.8)",
@@ -177,10 +170,11 @@ export function Stories() {
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5"
                   style={{
-                    background: "linear-gradient(135deg, #F4BFC9, #D8BFA3)",
+                    background:
+                      "linear-gradient(135deg, #f97316, #ec4899, #a855f7)",
                   }}
                 >
-                  <Instagram className="w-6 h-6" style={{ color: "#2B2B2B" }} />
+                  <Instagram className="w-6 h-6 text-white" />
                 </div>
                 <div className="story-ring mx-auto w-fit mb-3">
                   <div className="story-ring-inner">
@@ -191,9 +185,9 @@ export function Stories() {
                   className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-5"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(244,191,201,0.25), rgba(216,191,163,0.25))",
+                      "linear-gradient(135deg, rgba(249,115,22,0.25), rgba(168,85,247,0.25))",
                     color: "rgba(255,255,255,0.85)",
-                    border: "1px solid rgba(244,191,201,0.3)",
+                    border: "1px solid rgba(249,115,22,0.3)",
                   }}
                 >
                   {modalBrand.name}
@@ -218,11 +212,11 @@ export function Stories() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-2xl font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-2xl font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-2xl active:scale-[0.98]"
                   style={{
-                    background: "linear-gradient(135deg, #F4BFC9, #D8BFA3)",
-                    color: "#2B2B2B",
-                    boxShadow: "0 8px 24px rgba(244,191,201,0.4)",
+                    background:
+                      "linear-gradient(135deg, #f97316, #ec4899, #a855f7)",
+                    boxShadow: "0 8px 24px rgba(236,72,153,0.4)",
                   }}
                   data-ocid="stories.instagram.button"
                 >
@@ -232,7 +226,7 @@ export function Stories() {
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="mt-4 text-sm"
+                  className="mt-4 text-sm transition-colors duration-200"
                   style={{ color: "rgba(255,255,255,0.4)" }}
                   data-ocid="stories.cancel_button"
                 >

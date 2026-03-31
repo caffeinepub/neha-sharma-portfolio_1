@@ -9,33 +9,26 @@ const navLinks = [
   { label: "Metrics", href: "#metrics" },
   { label: "Viral", href: "#viral-highlight" },
   { label: "Performance", href: "#performance" },
+  { label: "Media Kit", href: "#media-kit" },
   { label: "Collabs", href: "#collaborations" },
   { label: "Stories", href: "#stories" },
   { label: "Why Brands", href: "#why-brands" },
   { label: "Audience", href: "#audience" },
   { label: "Services", href: "#services" },
-  { label: "Fan Love", href: "#fan-edits" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
   return (
     <header
-      className="sticky top-0 z-50 backdrop-blur-md border-b"
-      style={{
-        background: "oklch(1 0 0 / 0.92)",
-        borderColor: "oklch(0.93 0.015 35)",
-      }}
+      className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border"
       data-ocid="header.panel"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a
             href="#hero"
-            className="font-bold text-lg tracking-tight"
-            style={{
-              color: "oklch(0.65 0.065 10)",
-            }}
+            className="font-semibold text-lg text-primary tracking-tight"
           >
             Neha Sharma
           </a>
@@ -44,8 +37,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium transition-colors duration-200 hover:text-primary"
-                style={{ color: "oklch(0.52 0.005 30)" }}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
@@ -56,17 +48,10 @@ export function Header() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-primary/5"
-              style={{
-                border: "1px solid oklch(0.93 0.015 35)",
-                color: "oklch(0.52 0.005 30)",
-              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border text-sm font-medium hover:bg-accent/30 transition-colors"
               data-ocid="header.instagram.link"
             >
-              <SiInstagram
-                className="w-4 h-4"
-                style={{ color: "oklch(0.72 0.065 10)" }}
-              />
+              <SiInstagram className="w-4 h-4 text-primary" />
               <span className="hidden sm:inline">Instagram</span>
               <span className="sm:hidden">IG</span>
             </a>
@@ -74,17 +59,10 @@ export function Header() {
               href={YOUTUBE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-primary/5"
-              style={{
-                border: "1px solid oklch(0.93 0.015 35)",
-                color: "oklch(0.52 0.005 30)",
-              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border text-sm font-medium hover:bg-accent/30 transition-colors"
               data-ocid="header.youtube.link"
             >
-              <SiYoutube
-                className="w-4 h-4"
-                style={{ color: "oklch(0.72 0.065 10)" }}
-              />
+              <SiYoutube className="w-4 h-4 text-primary" />
               <span className="hidden sm:inline">YouTube</span>
               <span className="sm:hidden">YT</span>
             </a>

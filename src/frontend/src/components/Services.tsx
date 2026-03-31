@@ -36,11 +36,7 @@ const services = [
 
 export function Services() {
   return (
-    <section
-      id="services"
-      className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.99 0.007 60)" }}
-    >
+    <section id="services" className="py-20 md:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeader
           heading="Collaboration Services"
@@ -50,35 +46,10 @@ export function Services() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="p-6 rounded-3xl bg-card transition-all duration-300"
-              style={{
-                border: "1px solid oklch(0.93 0.015 35)",
-                boxShadow: "0 2px 12px -2px rgba(0,0,0,0.05)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 8px 32px -4px rgba(244,191,201,0.2), 0 2px 8px rgba(0,0,0,0.05)";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "oklch(0.84 0.065 10 / 0.3)";
-                (e.currentTarget as HTMLDivElement).style.transform =
-                  "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow =
-                  "0 2px 12px -2px rgba(0,0,0,0.05)";
-                (e.currentTarget as HTMLDivElement).style.borderColor =
-                  "oklch(0.93 0.015 35)";
-                (e.currentTarget as HTMLDivElement).style.transform =
-                  "translateY(0)";
-              }}
+              className="p-6 rounded-3xl bg-card border border-border hover:shadow-card hover:border-primary/30 transition-all"
+              style={{ boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)" }}
             >
-              <div
-                className="w-11 h-11 rounded-2xl flex items-center justify-center mb-4"
-                style={{
-                  background: "oklch(0.84 0.065 10 / 0.12)",
-                  color: "oklch(0.65 0.065 10)",
-                }}
-              >
+              <div className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4">
                 <s.icon className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-foreground mb-2">{s.title}</h3>

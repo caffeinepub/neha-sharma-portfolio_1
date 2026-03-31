@@ -11,29 +11,14 @@ function CountCard({
   return (
     <div
       ref={ref}
-      className="rounded-3xl p-8 text-center transition-all duration-300"
+      className="rounded-3xl p-8 text-center hover:shadow-card transition-shadow duration-300"
       style={{
-        background: "oklch(1 0 0)",
-        boxShadow:
-          "0 2px 16px -2px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03)",
-        border: "1px solid oklch(0.93 0.015 35)",
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 8px 32px -4px rgba(244,191,201,0.3), 0 2px 8px rgba(0,0,0,0.05)";
-        (e.currentTarget as HTMLDivElement).style.transform =
-          "translateY(-3px)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 2px 16px -2px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03)";
-        (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+        background:
+          "linear-gradient(135deg, oklch(0.70 0.10 25 / 0.05), oklch(0.88 0.08 15 / 0.08))",
+        boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)",
       }}
     >
-      <div
-        className="text-4xl md:text-5xl font-bold mb-2"
-        style={{ color: "oklch(0.65 0.065 10)" }}
-      >
+      <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
         {count.toLocaleString()}
         {suffix}
       </div>
@@ -48,7 +33,7 @@ export function Metrics() {
     <section
       id="metrics"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.99 0.007 60)" }}
+      style={{ backgroundColor: "oklch(0.97 0.012 40)" }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionHeader

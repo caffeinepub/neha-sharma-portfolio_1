@@ -22,12 +22,7 @@ export function Footer() {
     typeof window !== "undefined" ? window.location.hostname : "";
   return (
     <footer
-      className="pt-16 pb-8"
-      style={{
-        background:
-          "linear-gradient(135deg, oklch(0.22 0.005 30), oklch(0.18 0.008 20))",
-        color: "oklch(0.92 0.03 50)",
-      }}
+      className="bg-foreground text-background pt-16 pb-8"
       data-ocid="footer.section"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,40 +30,26 @@ export function Footer() {
           <div>
             <p
               className="text-2xl font-bold mb-2"
-              style={{
-                color: "oklch(0.99 0.007 60)",
-              }}
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Neha Sharma
             </p>
-            <p
-              className="text-sm mb-1"
-              style={{ color: "oklch(0.84 0.065 10 / 0.85)" }}
-            >
+            <p className="text-background/70 text-sm mb-1">
               Spreading Positivity & Inspiring Confidence
             </p>
-            <p
-              className="text-xs uppercase tracking-widest"
-              style={{ color: "oklch(0.80 0.055 65 / 0.6)" }}
-            >
+            <p className="text-background/50 text-xs uppercase tracking-widest">
               Beauty • Fashion • Lifestyle
             </p>
           </div>
           <div>
-            <p
-              className="font-semibold mb-4"
-              style={{ color: "oklch(0.92 0.03 50 / 0.9)" }}
-            >
-              Connect
-            </p>
+            <p className="font-semibold mb-4 text-background/90">Connect</p>
             <ul className="space-y-3">
               <li>
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-colors duration-200 hover:opacity-80"
-                  style={{ color: "oklch(0.75 0.015 30)" }}
+                  className="flex items-center gap-2 text-background/70 hover:text-background transition-colors text-sm"
                 >
                   <SiInstagram className="w-4 h-4" /> @nehasharma.3_
                 </a>
@@ -78,8 +59,7 @@ export function Footer() {
                   href={YOUTUBE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-colors duration-200 hover:opacity-80"
-                  style={{ color: "oklch(0.75 0.015 30)" }}
+                  className="flex items-center gap-2 text-background/70 hover:text-background transition-colors text-sm"
                 >
                   <SiYoutube className="w-4 h-4" /> YouTube Channel
                 </a>
@@ -87,8 +67,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="flex items-center gap-2 text-sm transition-colors duration-200 hover:opacity-80"
-                  style={{ color: "oklch(0.75 0.015 30)" }}
+                  className="flex items-center gap-2 text-background/70 hover:text-background transition-colors text-sm"
                 >
                   <Mail className="w-4 h-4" /> {EMAIL}
                 </a>
@@ -96,19 +75,13 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p
-              className="font-semibold mb-4"
-              style={{ color: "oklch(0.92 0.03 50 / 0.9)" }}
-            >
-              Explore
-            </p>
+            <p className="font-semibold mb-4 text-background/90">Explore</p>
             <ul className="space-y-2">
               {exploreLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm transition-colors duration-200 hover:opacity-80"
-                    style={{ color: "oklch(0.75 0.015 30)" }}
+                    className="text-background/70 hover:text-background transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -117,13 +90,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div
-          className="border-t pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm"
-          style={{
-            borderColor: "oklch(0.92 0.03 50 / 0.1)",
-            color: "oklch(0.75 0.015 30 / 0.6)",
-          }}
-        >
+        <div className="border-t border-background/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-background/50">
           <p>© {year} Neha Sharma. All rights reserved.</p>
           <p>
             Built with ♥ using{" "}
@@ -131,7 +98,7 @@ export function Footer() {
               href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity underline"
+              className="hover:text-background/80 transition-colors underline"
             >
               caffeine.ai
             </a>

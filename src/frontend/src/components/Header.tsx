@@ -7,14 +7,16 @@ const YOUTUBE_URL = "https://www.youtube.com/channel/UCcTyF0knONJ3x1cdBTHlLIQ";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Metrics", href: "#metrics" },
-  { label: "Viral", href: "#viral-highlight" },
+  { label: "Viral Campaign", href: "#viral-highlight" },
   { label: "Performance", href: "#performance" },
   { label: "Media Kit", href: "#media-kit" },
-  { label: "Collabs", href: "#collaborations" },
+  { label: "Collaborations", href: "#collaborations" },
   { label: "Stories", href: "#stories" },
   { label: "Why Brands", href: "#why-brands" },
   { label: "Audience", href: "#audience" },
   { label: "Services", href: "#services" },
+  { label: "Fan Love", href: "#fan-love" },
+  { label: "Love & Support", href: "#love-support" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -32,12 +34,12 @@ export function Header() {
           >
             Neha Sharma
           </a>
-          <nav className="hidden xl:flex items-center gap-5">
+          <nav className="hidden xl:flex items-center gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>

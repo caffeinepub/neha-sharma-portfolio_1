@@ -2,7 +2,6 @@ import { Mail, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { About } from "./components/About";
 import { AudienceActivity } from "./components/AudienceActivity";
-import { CollabOptions } from "./components/CollabOptions";
 import { Collaborations } from "./components/Collaborations";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -32,7 +31,6 @@ export default function App() {
         <Collaborations />
         <Stories />
         <WhyBrands />
-        <CollabOptions />
         <AudienceActivity />
         <Testimonials />
         <Services />

@@ -2,8 +2,7 @@ import { TrendingUp } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 
 const stats = [
-  { value: "1.8K+", label: "Followers", highlight: true },
-  { value: "3.5K – 4.5K", label: "Avg Reel Views", highlight: true },
+  { value: "3.0K+", label: "Followers", highlight: true },
   { value: "8K+", label: "Highest Reach on Reels", highlight: true },
   { value: "6% – 9%", label: "Engagement Rate", highlight: true },
   { value: "85%+", label: "Indian Audience", highlight: false },

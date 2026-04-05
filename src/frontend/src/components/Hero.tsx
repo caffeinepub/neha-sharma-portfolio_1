@@ -198,7 +198,7 @@ export function Hero() {
                 border: "1px solid oklch(0.70 0.10 25 / 0.2)",
               }}
             >
-              Beauty • Fashion • Lifestyle Creator
+              Beauty • Fashion • Lifestyle
             </motion.span>
 
             <h1

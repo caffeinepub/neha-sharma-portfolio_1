@@ -11,7 +11,11 @@ const stats = [
 
 export function Performance() {
   return (
-    <section id="performance" className="py-20 md:py-24">
+    <section
+      id="performance"
+      className="py-20 md:py-24"
+      style={{ backgroundColor: "#FFFFFF" }}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeader
           heading="Performance Highlights"
@@ -24,21 +28,24 @@ export function Performance() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className={`p-6 rounded-3xl transition-shadow hover:shadow-card border ${
-                stat.highlight
-                  ? "border-primary/20 bg-primary/5"
-                  : "border-border bg-muted/20"
-              }`}
-              style={{ boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)" }}
+              className="p-6 rounded-3xl transition-all duration-200"
+              style={{
+                border: stat.highlight
+                  ? "1px solid rgba(255,77,141,0.25)"
+                  : "1px solid #EAEAEA",
+                background: stat.highlight ? "#FFF0F5" : "#FAFAFA",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+              }}
             >
               <p
-                className={`text-3xl font-bold mb-1 ${
-                  stat.highlight ? "text-primary" : "text-foreground"
-                }`}
+                className="text-3xl font-bold mb-1"
+                style={{ color: stat.highlight ? "#FF4D8D" : "#111111" }}
               >
                 {stat.value}
               </p>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
+              <p className="text-sm" style={{ color: "#888888" }}>
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>
@@ -46,18 +53,22 @@ export function Performance() {
           className="rounded-3xl p-6 md:p-8 flex items-start gap-4"
           style={{
             background:
-              "linear-gradient(135deg, oklch(0.70 0.10 25 / 0.08), oklch(0.88 0.08 15 / 0.12))",
+              "linear-gradient(135deg, rgba(255,77,141,0.06), rgba(123,97,255,0.06))",
+            border: "1px solid rgba(255,77,141,0.12)",
           }}
         >
-          <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-primary/20 flex items-center justify-center">
-            <TrendingUp className="w-5 h-5 text-primary" />
+          <div
+            className="flex-shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center"
+            style={{ background: "#FFF0F5" }}
+          >
+            <TrendingUp className="w-5 h-5" style={{ color: "#FF4D8D" }} />
           </div>
-          <p className="text-foreground/80 leading-relaxed">
-            <strong className="text-foreground">
+          <p className="leading-relaxed" style={{ color: "#555555" }}>
+            <strong style={{ color: "#111111" }}>
               6%–9% engagement rate with 85%+ Indian audience
             </strong>{" "}
             — Neha's focused beauty and skincare audience delivers{" "}
-            <strong className="text-foreground">
+            <strong style={{ color: "#111111" }}>
               high-quality, targeted reach
             </strong>{" "}
             that converts for beauty and lifestyle brands.

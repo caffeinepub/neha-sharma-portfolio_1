@@ -7,20 +7,17 @@ const INSTAGRAM_URL =
   "https://www.instagram.com/nehasharma.3_?igsh=OHByMmt2a24yM2k4";
 
 const BRAND_GRADIENTS = [
-  "linear-gradient(135deg, #1a1a2e, #16213e)",
-  "linear-gradient(135deg, #7b2d8b, #9b59b6)",
-  "linear-gradient(135deg, #2e7d32, #43a047)",
-  "linear-gradient(135deg, #1565c0, #1976d2)",
-  "linear-gradient(135deg, #b71c1c, #e53935)",
-  "linear-gradient(135deg, #e65100, #fb8c00)",
-  "linear-gradient(135deg, #4a148c, #7b1fa2)",
-  "linear-gradient(135deg, #006064, #00838f)",
+  "linear-gradient(135deg, #FF4D8D, #7B61FF)",
+  "linear-gradient(135deg, #7B61FF, #FF4D8D)",
+  "linear-gradient(135deg, #FF4D8D, #c084fc)",
+  "linear-gradient(135deg, #a78bfa, #FF4D8D)",
+  "linear-gradient(135deg, #FF4D8D, #818cf8)",
+  "linear-gradient(135deg, #7B61FF, #f472b6)",
+  "linear-gradient(135deg, #f472b6, #7B61FF)",
+  "linear-gradient(135deg, #a855f7, #FF4D8D)",
 ];
 
-const brands: {
-  name: string;
-  gradientIndex: number;
-}[] = [
+const brands: { name: string; gradientIndex: number }[] = [
   { name: "Minimalist", gradientIndex: 0 },
   { name: "Plum", gradientIndex: 1 },
   { name: "Dot & Key", gradientIndex: 2 },
@@ -53,7 +50,7 @@ function BrandCircle({ size = 80 }: { size?: number }) {
         alignItems: "center",
         justifyContent: "center",
         flexShrink: 0,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
       }}
     >
       <span style={{ fontSize: "22px", lineHeight: 1 }}>🤍</span>
@@ -71,14 +68,17 @@ export function Stories() {
   return (
     <section
       id="stories"
-      className="py-20 md:py-28 bg-gradient-to-b from-background to-secondary/30"
+      className="py-20 md:py-28"
+      style={{
+        background: "linear-gradient(180deg, #FFFFFF 0%, #FFF0F5 100%)",
+      }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionHeader
           heading="Story Promotions & Brand Mentions"
           sub="Quick, engaging story content for maximum brand visibility"
         />
-        <p className="text-center text-muted-foreground text-sm mb-12">
+        <p className="text-center text-sm mb-12" style={{ color: "#888888" }}>
           Follow and check the PR highlight on my profile to know more
         </p>
         <div className="overflow-x-auto pb-6">
@@ -104,10 +104,22 @@ export function Stories() {
                       <BrandCircle size={80} />
                     </div>
                   </motion.div>
-                  <span className="text-sm font-semibold text-foreground max-w-[80px] text-center leading-tight group-hover:text-primary transition-colors duration-200">
+                  <span
+                    className="text-sm font-semibold max-w-[80px] text-center leading-tight transition-colors duration-200"
+                    style={{ color: "#111111" }}
+                    onMouseEnter={(e) => {
+                      (e.target as HTMLElement).style.color = "#FF4D8D";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.target as HTMLElement).style.color = "#111111";
+                    }}
+                  >
                     {brand.name}
                   </span>
-                  <span className="text-xs text-primary/80 font-medium tracking-wide">
+                  <span
+                    className="text-xs font-medium tracking-wide"
+                    style={{ color: "#FF4D8D" }}
+                  >
                     View Story
                   </span>
                 </button>
@@ -127,7 +139,7 @@ export function Stories() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
             style={{
-              background: "rgba(10, 5, 20, 0.7)",
+              background: "rgba(17, 17, 17, 0.6)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }}
@@ -143,11 +155,9 @@ export function Stories() {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-sm w-full text-center rounded-[2rem] overflow-hidden"
               style={{
-                background:
-                  "linear-gradient(145deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.06) 100%)",
-                border: "1px solid rgba(255,255,255,0.18)",
-                boxShadow:
-                  "0 32px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2)",
+                background: "#FFFFFF",
+                border: "1px solid #EAEAEA",
+                boxShadow: "0 32px 80px rgba(0,0,0,0.2)",
               }}
             >
               <div
@@ -159,10 +169,7 @@ export function Stories() {
                   type="button"
                   onClick={closeModal}
                   className="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
-                  style={{
-                    background: "rgba(255,255,255,0.15)",
-                    color: "rgba(255,255,255,0.8)",
-                  }}
+                  style={{ background: "#F7F7F7", color: "#555555" }}
                   data-ocid="stories.close_button"
                 >
                   <X className="w-4 h-4" />
@@ -170,8 +177,7 @@ export function Stories() {
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-5"
                   style={{
-                    background:
-                      "linear-gradient(135deg, #f97316, #ec4899, #a855f7)",
+                    background: "linear-gradient(135deg, #FF4D8D, #7B61FF)",
                   }}
                 >
                   <Instagram className="w-6 h-6 text-white" />
@@ -184,10 +190,9 @@ export function Stories() {
                 <span
                   className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-5"
                   style={{
-                    background:
-                      "linear-gradient(135deg, rgba(249,115,22,0.25), rgba(168,85,247,0.25))",
-                    color: "rgba(255,255,255,0.85)",
-                    border: "1px solid rgba(249,115,22,0.3)",
+                    background: "#FFF0F5",
+                    color: "#FF4D8D",
+                    border: "1px solid rgba(255,77,141,0.2)",
                   }}
                 >
                   {modalBrand.name}
@@ -195,7 +200,7 @@ export function Stories() {
                 <h3
                   className="text-2xl font-bold mb-3"
                   style={{
-                    color: "rgba(255,255,255,0.95)",
+                    color: "#111111",
                     fontFamily: "'Playfair Display', serif",
                   }}
                 >
@@ -203,7 +208,7 @@ export function Stories() {
                 </h3>
                 <p
                   className="text-sm leading-relaxed mb-7"
-                  style={{ color: "rgba(255,255,255,0.6)" }}
+                  style={{ color: "#888888" }}
                 >
                   This content is best viewed directly on Instagram. Click the
                   button below to open it in a new tab.
@@ -212,11 +217,10 @@ export function Stories() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-2xl font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-2xl active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-2xl font-semibold text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
                   style={{
-                    background:
-                      "linear-gradient(135deg, #f97316, #ec4899, #a855f7)",
-                    boxShadow: "0 8px 24px rgba(236,72,153,0.4)",
+                    background: "linear-gradient(135deg, #FF4D8D, #7B61FF)",
+                    boxShadow: "0 8px 24px rgba(255,77,141,0.35)",
                   }}
                   data-ocid="stories.instagram.button"
                 >
@@ -227,7 +231,7 @@ export function Stories() {
                   type="button"
                   onClick={closeModal}
                   className="mt-4 text-sm transition-colors duration-200"
-                  style={{ color: "rgba(255,255,255,0.4)" }}
+                  style={{ color: "#888888" }}
                   data-ocid="stories.cancel_button"
                 >
                   Close

@@ -11,11 +11,16 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className={`mb-12 ${centered ? "text-center" : ""}`}>
-      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
+      <h2
+        className="text-3xl md:text-4xl font-bold tracking-tight mb-3"
+        style={{ color: "#111111" }}
+      >
         {heading}
       </h2>
       {sub && (
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{sub}</p>
+        <p className="text-lg max-w-2xl mx-auto" style={{ color: "#888888" }}>
+          {sub}
+        </p>
       )}
     </div>
   );

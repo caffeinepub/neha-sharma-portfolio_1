@@ -14,7 +14,7 @@ export function WhyBrands() {
     <section
       id="why-brands"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.96 0.015 40)" }}
+      style={{ backgroundColor: "#FAFAFA" }}
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <SectionHeader
@@ -28,11 +28,20 @@ export function WhyBrands() {
           {reasons.map((reason) => (
             <div
               key={reason}
-              className="flex items-center gap-4 p-5 rounded-3xl bg-card border border-border"
-              style={{ boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)" }}
+              className="flex items-center gap-4 p-5 rounded-3xl transition-all duration-200"
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #EAEAEA",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+              }}
             >
-              <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-              <p className="text-foreground font-medium">{reason}</p>
+              <CheckCircle2
+                className="w-6 h-6 flex-shrink-0"
+                style={{ color: "#FF4D8D" }}
+              />
+              <p className="font-medium" style={{ color: "#111111" }}>
+                {reason}
+              </p>
             </div>
           ))}
         </div>

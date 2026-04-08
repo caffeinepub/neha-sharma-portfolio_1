@@ -18,9 +18,9 @@ function ShiningStarBadge() {
         animate={{
           scale: [1, 1.3, 1],
           filter: [
-            "drop-shadow(0 0 4px #f9a825) drop-shadow(0 0 8px #f97316)",
-            "drop-shadow(0 0 10px #fbbf24) drop-shadow(0 0 20px #ec4899)",
-            "drop-shadow(0 0 4px #f9a825) drop-shadow(0 0 8px #f97316)",
+            "drop-shadow(0 0 4px #FF4D8D) drop-shadow(0 0 8px #7B61FF)",
+            "drop-shadow(0 0 10px #FF4D8D) drop-shadow(0 0 20px #7B61FF)",
+            "drop-shadow(0 0 4px #FF4D8D) drop-shadow(0 0 8px #7B61FF)",
           ],
         }}
         transition={{
@@ -42,35 +42,24 @@ export function Hero() {
       id="hero"
       className="relative min-h-[92vh] flex items-center overflow-hidden"
       data-ocid="hero.section"
+      style={{
+        background:
+          "linear-gradient(135deg, #FFFFFF 0%, #FFF0F5 55%, #F5F0FF 100%)",
+      }}
     >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('/assets/generated/neha-hero-bg.dim_1920x1080.png')",
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(135deg, oklch(0.98 0.012 40 / 0.95) 0%, oklch(0.97 0.015 30 / 0.82) 55%, oklch(0.96 0.02 20 / 0.97) 100%)",
-        }}
-      />
       {/* Decorative orbs */}
       <div
         className="absolute top-20 right-32 w-96 h-96 rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.70 0.12 25 / 0.12) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(255,77,141,0.08) 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute bottom-20 left-16 w-72 h-72 rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, oklch(0.85 0.10 15 / 0.1) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(123,97,255,0.07) 0%, transparent 70%)",
         }}
       />
 
@@ -83,7 +72,7 @@ export function Hero() {
           repeat: Number.POSITIVE_INFINITY,
           ease: "easeInOut",
         }}
-        style={{ filter: "drop-shadow(0 2px 6px rgba(236,72,153,0.3))" }}
+        style={{ filter: "drop-shadow(0 2px 6px rgba(255,77,141,0.3))" }}
       >
         🤍
       </motion.span>
@@ -96,7 +85,7 @@ export function Hero() {
           ease: "easeInOut",
           delay: 1,
         }}
-        style={{ filter: "drop-shadow(0 2px 6px rgba(249,115,22,0.3))" }}
+        style={{ filter: "drop-shadow(0 2px 6px rgba(123,97,255,0.3))" }}
       >
         📷
       </motion.span>
@@ -109,7 +98,7 @@ export function Hero() {
           ease: "easeInOut",
           delay: 2,
         }}
-        style={{ filter: "drop-shadow(0 2px 6px rgba(168,85,247,0.3))" }}
+        style={{ filter: "drop-shadow(0 2px 6px rgba(255,77,141,0.3))" }}
       >
         💬
       </motion.span>
@@ -128,26 +117,25 @@ export function Hero() {
               className="absolute inset-0 rounded-full"
               style={{
                 background:
-                  "conic-gradient(from 0deg, #f97316, #ec4899, #a855f7, #ec4899, #f97316)",
+                  "conic-gradient(from 0deg, #FF4D8D, #7B61FF, #FF4D8D, #7B61FF, #FF4D8D)",
                 padding: "4px",
                 borderRadius: "9999px",
-                filter: "blur(0px)",
                 transform: "scale(1.08)",
               }}
             />
-            {/* Rotating glow effect */}
+            {/* Rotating glow */}
             <div
               className="absolute inset-0 rounded-full"
               style={{
                 background:
-                  "conic-gradient(from 90deg, transparent 60%, oklch(0.70 0.15 25 / 0.4) 100%)",
+                  "conic-gradient(from 90deg, transparent 60%, rgba(255,77,141,0.4) 100%)",
                 transform: "scale(1.12)",
                 animation: "spin 8s linear infinite",
               }}
             />
             {/* White separator ring */}
             <div
-              className="absolute rounded-full bg-background"
+              className="absolute rounded-full bg-white"
               style={{ inset: "-6px", zIndex: 1, borderRadius: "9999px" }}
             />
             {/* Gradient border ring */}
@@ -155,15 +143,14 @@ export function Hero() {
               className="absolute rounded-full"
               style={{
                 inset: "-4px",
-                background:
-                  "linear-gradient(135deg, #f97316, #ec4899, #a855f7)",
+                background: "linear-gradient(135deg, #FF4D8D, #7B61FF)",
                 zIndex: 2,
                 borderRadius: "9999px",
               }}
             />
             {/* White inner ring */}
             <div
-              className="absolute rounded-full bg-background"
+              className="absolute rounded-full bg-white"
               style={{ inset: "-2px", zIndex: 3, borderRadius: "9999px" }}
             />
             {/* Photo */}
@@ -172,12 +159,11 @@ export function Hero() {
               style={{ zIndex: 4 }}
             >
               <img
-                src="/assets/uploads/photo_2026-02-16_11-22-13-2-1.jpg"
+                src="/assets/uploads/image-019d38c1-0301-76de-886d-f6d9f3f9a5a2-4.png"
                 alt="Neha Sharma"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Shining star badge */}
             <ShiningStarBadge />
           </motion.div>
 
@@ -192,10 +178,10 @@ export function Hero() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="inline-block px-4 py-1.5 rounded-full text-primary text-xs font-bold tracking-widest uppercase mb-5"
+              className="inline-block px-4 py-1.5 rounded-full text-white text-xs font-bold tracking-widest uppercase mb-5"
               style={{
-                background: "oklch(0.70 0.10 25 / 0.1)",
-                border: "1px solid oklch(0.70 0.10 25 / 0.2)",
+                background: "linear-gradient(135deg, #FF4D8D, #7B61FF)",
+                boxShadow: "0 4px 16px rgba(255,77,141,0.3)",
               }}
             >
               Beauty • Fashion • Lifestyle
@@ -205,7 +191,7 @@ export function Hero() {
               className="text-5xl md:text-7xl font-bold tracking-tight mb-4 leading-tight"
               style={{
                 fontFamily: "'Playfair Display', serif",
-                background: "linear-gradient(135deg, #c0504d 0%, #c0504d 100%)",
+                background: "linear-gradient(135deg, #FF4D8D, #7B61FF)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -218,7 +204,7 @@ export function Hero() {
               Spreading Positivity & Inspiring Confidence
             </p>
 
-            <ul className="space-y-2.5 mb-9 text-foreground/80">
+            <ul className="space-y-2.5 mb-9" style={{ color: "#555555" }}>
               <li className="flex items-center gap-2.5">
                 <span className="text-lg">✨</span> Spreading Positivity &
                 Inspiring Confidence
@@ -237,11 +223,10 @@ export function Hero() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-3xl text-white font-semibold transition-all duration-200 hover:scale-105 hover:shadow-2xl active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-3xl text-white font-semibold transition-all duration-200 hover:scale-105 active:scale-[0.98]"
                 style={{
-                  background:
-                    "linear-gradient(135deg, #f97316, #ec4899, #a855f7)",
-                  boxShadow: "0 8px 24px rgba(236,72,153,0.35)",
+                  background: "linear-gradient(135deg, #FF4D8D, #7B61FF)",
+                  boxShadow: "0 8px 24px rgba(255,77,141,0.35)",
                 }}
                 data-ocid="hero.instagram.button"
               >
@@ -249,7 +234,12 @@ export function Hero() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-3xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-3xl font-semibold transition-all duration-200 hover:scale-105"
+                style={{
+                  border: "2px solid #FF4D8D",
+                  color: "#FF4D8D",
+                  background: "transparent",
+                }}
                 data-ocid="hero.contact.button"
               >
                 <Mail className="w-4 h-4" /> Work With Me

@@ -77,8 +77,10 @@ export default {
         "4xl": "2rem",
       },
       boxShadow: {
-        soft: "0 2px 12px -2px rgba(0,0,0,0.08)",
-        card: "0 4px 24px -4px rgba(0,0,0,0.10)",
+        soft: "0 4px 20px rgba(0,0,0,0.05)",
+        card: "0 4px 20px rgba(0,0,0,0.05)",
+        hover: "0 8px 32px rgba(0,0,0,0.10)",
+        pink: "0 8px 32px rgba(255,77,141,0.35)",
       },
       keyframes: {
         "accordion-down": {

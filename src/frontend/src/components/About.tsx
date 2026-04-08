@@ -5,14 +5,14 @@ export function About() {
     <section
       id="about"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.96 0.015 40)" }}
+      style={{ backgroundColor: "#FAFAFA" }}
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <SectionHeader heading="About Neha" />
-        <p className="text-primary font-semibold mb-6">
+        <p className="font-semibold mb-6" style={{ color: "#FF4D8D" }}>
           Beauty • Fashion • Lifestyle Creator
         </p>
-        <p className="text-foreground/80 text-lg leading-relaxed">
+        <p className="text-lg leading-relaxed" style={{ color: "#555555" }}>
           Neha is a beauty and lifestyle content creator focused on relatable,
           authentic, and confidence-driven content. She creates engaging reels,
           skincare reviews, fashion styling videos, and positive lifestyle

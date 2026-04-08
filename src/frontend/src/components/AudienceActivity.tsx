@@ -6,7 +6,7 @@ export function AudienceActivity() {
     <section
       id="audience"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.96 0.015 40)" }}
+      style={{ backgroundColor: "#FFFFFF" }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionHeader
@@ -14,21 +14,39 @@ export function AudienceActivity() {
           sub="Optimal posting window for sponsored content"
         />
         <div
-          className="max-w-lg mx-auto rounded-3xl p-10 text-center bg-card border border-border"
-          style={{ boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)" }}
+          className="max-w-lg mx-auto rounded-3xl p-10 text-center"
+          style={{
+            background: "#FFFFFF",
+            border: "1px solid #EAEAEA",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+          }}
         >
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-            <Clock className="w-8 h-8 text-primary" />
+          <div
+            className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+            style={{ background: "#FFF0F5" }}
+          >
+            <Clock className="w-8 h-8" style={{ color: "#FF4D8D" }} />
           </div>
-          <p className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+          <p
+            className="text-4xl md:text-5xl font-bold mb-2"
+            style={{ color: "#111111" }}
+          >
             9AM – 9PM
           </p>
-          <p className="text-primary font-semibold mb-1">Peak around 6PM–9PM</p>
-          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+          <p className="font-semibold mb-1" style={{ color: "#FF4D8D" }}>
+            Peak around 6PM–9PM
+          </p>
+          <p
+            className="text-sm font-semibold uppercase tracking-widest"
+            style={{ color: "#888888" }}
+          >
             Most Active Hours
           </p>
         </div>
-        <p className="text-center text-muted-foreground text-sm mt-6 max-w-lg mx-auto">
+        <p
+          className="text-center text-sm mt-6 max-w-lg mx-auto"
+          style={{ color: "#888888" }}
+        >
           Schedule your sponsored content during these peak engagement windows
           for maximum visibility and interaction.
         </p>

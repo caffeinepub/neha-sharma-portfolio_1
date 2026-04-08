@@ -35,9 +35,11 @@ function VideoCard({
 
   return (
     <motion.div
-      className="relative bg-card rounded-2xl overflow-hidden border border-primary/15 cursor-pointer"
+      className="relative rounded-2xl overflow-hidden cursor-pointer"
       style={{
-        boxShadow: "0 4px 24px -4px rgba(0,0,0,0.08)",
+        background: "#FFFFFF",
+        border: "1px solid #EAEAEA",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
       }}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +48,7 @@ function VideoCard({
       whileHover={{
         scale: 1.02,
         boxShadow:
-          "0 8px 40px -4px rgba(244,191,201,0.45), 0 4px 16px rgba(0,0,0,0.08)",
+          "0 8px 40px rgba(255,77,141,0.2), 0 4px 16px rgba(0,0,0,0.08)",
       }}
       onMouseEnter={handleMouseEnter}
       data-ocid={`love-support.item.${index + 1}`}
@@ -63,8 +65,8 @@ function VideoCard({
 
       {/* Video — 9:16 aspect ratio (Instagram Reel style) */}
       <div
-        className="relative bg-muted/30 rounded-xl overflow-hidden w-full"
-        style={{ aspectRatio: "9 / 16" }}
+        className="relative rounded-xl overflow-hidden w-full"
+        style={{ aspectRatio: "9 / 16", background: "#FAFAFA" }}
       >
         {/* biome-ignore lint/a11y/useMediaCaption: fan video section, captions added via track when src is provided */}
         <video
@@ -90,9 +92,8 @@ function VideoCard({
             <span
               className="w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-200 group-hover:scale-110"
               style={{
-                background:
-                  "linear-gradient(135deg, rgba(244,191,201,0.95) 0%, rgba(242,227,216,0.95) 100%)",
-                boxShadow: "0 4px 20px rgba(244,191,201,0.5)",
+                background: "linear-gradient(135deg, #FF4D8D, #7B61FF)",
+                boxShadow: "0 4px 20px rgba(255,77,141,0.4)",
               }}
             >
               <svg
@@ -113,7 +114,9 @@ function VideoCard({
 
       {/* Caption */}
       <div className="px-4 py-3 text-center">
-        <p className="text-sm font-medium text-muted-foreground">{caption}</p>
+        <p className="text-sm font-medium" style={{ color: "#888888" }}>
+          {caption}
+        </p>
       </div>
     </motion.div>
   );
@@ -136,7 +139,8 @@ export function LoveSupport() {
         id="love-support"
         className="py-20 md:py-24"
         style={{
-          background: "linear-gradient(135deg, #FFFBF9 0%, #FDF1F4 100%)",
+          background:
+            "linear-gradient(135deg, #FFFFFF 0%, #FFF0F5 60%, #F5F0FF 100%)",
         }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -148,13 +152,22 @@ export function LoveSupport() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.55, ease: "easeOut" }}
           >
-            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-2">
+            <p
+              className="text-xs uppercase tracking-[0.18em] mb-2 font-semibold"
+              style={{ color: "#FF4D8D" }}
+            >
               LOVE &amp; SUPPORT
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
+            <h2
+              className="text-3xl md:text-4xl font-bold tracking-tight mb-3"
+              style={{ color: "#111111" }}
+            >
               Your love means everything 💕
             </h2>
-            <p className="text-muted-foreground text-base max-w-md mx-auto leading-relaxed">
+            <p
+              className="text-base max-w-md mx-auto leading-relaxed"
+              style={{ color: "#888888" }}
+            >
               Here are some special moments that truly mean a lot to me.
             </p>
           </motion.div>

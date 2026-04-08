@@ -11,19 +11,36 @@ function CountCard({
   return (
     <div
       ref={ref}
-      className="rounded-3xl p-8 text-center hover:shadow-card transition-shadow duration-300"
+      className="rounded-3xl p-8 text-center transition-all duration-300"
       style={{
-        background:
-          "linear-gradient(135deg, oklch(0.70 0.10 25 / 0.05), oklch(0.88 0.08 15 / 0.08))",
-        boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)",
+        background: "#FFFFFF",
+        border: "1px solid #EAEAEA",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+      }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLElement).style.boxShadow =
+          "0 8px 32px rgba(0,0,0,0.10)";
+        (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLElement).style.boxShadow =
+          "0 4px 20px rgba(0,0,0,0.05)";
+        (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
       }}
     >
-      <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+      <div
+        className="text-4xl md:text-5xl font-bold mb-2"
+        style={{ color: "#FF4D8D" }}
+      >
         {count.toLocaleString()}
         {suffix}
       </div>
-      <div className="text-xl font-semibold text-foreground mb-1">{label}</div>
-      <div className="text-sm text-muted-foreground">{sublabel}</div>
+      <div className="text-xl font-semibold mb-1" style={{ color: "#111111" }}>
+        {label}
+      </div>
+      <div className="text-sm" style={{ color: "#888888" }}>
+        {sublabel}
+      </div>
     </div>
   );
 }
@@ -33,7 +50,7 @@ export function Metrics() {
     <section
       id="metrics"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.97 0.012 40)" }}
+      style={{ backgroundColor: "#FFFFFF" }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionHeader

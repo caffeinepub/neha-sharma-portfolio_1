@@ -23,7 +23,7 @@ export function Testimonials() {
     <section
       id="testimonials"
       className="py-20 md:py-24"
-      style={{ backgroundColor: "oklch(0.97 0.012 40)" }}
+      style={{ backgroundColor: "#FAFAFA" }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionHeader
@@ -34,12 +34,22 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="p-8 rounded-3xl bg-card border border-border relative"
-              style={{ boxShadow: "0 2px 12px -2px rgba(0,0,0,0.08)" }}
+              className="p-8 rounded-3xl relative transition-all duration-200"
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #EAEAEA",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+              }}
             >
-              <Quote className="w-8 h-8 text-primary/20 absolute top-6 right-6" />
-              <p className="text-foreground/80 leading-relaxed mb-6 italic">
-                “{t.quote}”
+              <Quote
+                className="w-8 h-8 absolute top-6 right-6"
+                style={{ color: "rgba(255,77,141,0.2)" }}
+              />
+              <p
+                className="leading-relaxed mb-6 italic"
+                style={{ color: "#555555" }}
+              >
+                "{t.quote}"
               </p>
               <div className="flex items-center gap-3">
                 <img
@@ -48,8 +58,12 @@ export function Testimonials() {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                  <p className="font-semibold" style={{ color: "#111111" }}>
+                    {t.name}
+                  </p>
+                  <p className="text-xs" style={{ color: "#888888" }}>
+                    {t.role}
+                  </p>
                 </div>
               </div>
             </div>
